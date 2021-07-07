@@ -1,0 +1,110 @@
+<main class="auth">
+  <section class="container-fluid authInn">
+    <img src="./assets/img/logoauth.png" alt="Swivel Developer Portal Auth page logo"/>
+    <div class="loginCont my-5">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <h3 class="text-center">SIGN UP</h3>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-6 myInputs">
+                <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
+                <label for="firstName" class="form-label">
+                  <span class="contName">First Name</span>
+                </label>
+                <div *ngIf="isFieldInvalid('firstName')" class="myValids">Please Enter Your First Name</div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 myInputs">
+                <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
+                <label for="lastName" class="form-label">
+                  <span class="contName">Last Name</span>
+                </label>
+                <div *ngIf="isFieldInvalid('lastName')" class="myValids">Please Enter Your Last Name</div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 myInputs">
+                <select class="form-select" id="country" formControlName="country" required>
+                  <option selected></option>
+                  <option value="Kenya">Kenya</option>
+                  <option value="Uganda">Uganda</option>
+                  <option value="Tanzania">Tanzania</option>
+                </select>
+                <label for="country" class="form-label">
+                  <span class="contName">Country</span>
+                </label>
+                <div *ngIf="isFieldInvalid('country')" class="myValids">Select a Country</div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 myInputs">
+                <select class="form-select" id="language" formControlName="language" required>
+                  <option selected></option>
+                  <option value="English">English</option>
+                  <option value="French">French</option>
+                </select>
+                <label for="language" class="form-label">
+                  <span class="contName">Language</span>
+                </label>
+                <div *ngIf="isFieldInvalid('language')" class="myValids">Select a Language</div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 myInputs">
+                <input type="email" class="form-control" id="email" formControlName="emailAddress" required>
+                <label for="email" class="form-label">
+                  <span class="contName">Email</span>
+                </label>
+                <div *ngIf="isFieldInvalid('emailAddress')" class="myValids">Please Enter a Valid Email</div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 myInputs">
+                <input type="tel" class="form-control" id="mobile" formControlName="mobileNo" required>
+                <label for="mobile" class="form-label">
+                  <span class="contName">Mobile Number</span>
+                </label>
+                <div *ngIf="isFieldInvalid('mobileNo')" class="myValids">Please Enter Mobile Number</div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 myInputs">
+                <select class="form-select" id="workFor" formControlName="workFor" required>
+                  <option selected></option>
+                  <option value="employed">Employed</option>
+                  <option value="startup">Own a StartUp</option>
+                </select>
+                <label for="workFor" class="form-label">
+                  <span class="contName">I Work For a Company</span>
+                </label>
+                <div *ngIf="isFieldInvalid('workFor')" class="myValids">Select Employment</div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 myInputs">
+                <input type="text" class="form-control" id="company" formControlName="company" required>
+                <label for="company" class="form-label">
+                  <span class="contName">Company Name</span>
+                </label>
+                <div *ngIf="isFieldInvalid('company')" class="myValids">Please Enter Company Name</div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 myInputs">
+                <input [type]="passType" class="form-control" id="password" formControlName="password" required>
+                <label for="password" class="form-label">
+                  <span class="contName">Password</span>
+                </label>
+                <div *ngIf="isFieldInvalid('password')" class="myValids">Password Short</div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 myInputs">
+                <span class="btn showPwd text-center" (click)="showPwd()"><i [class]="passShown ? 'far fa-eye-slash' : 'far fa-eye'"></i></span>
+                <input [type]="passType" class="form-control" id="confirmPwd" formControlName="confirmPwd" required>
+                <label for="confirmPwd" class="form-label">
+                  <span class="contName">Password</span>
+                </label>
+                <div *ngIf="isFieldInvalid('confirmPwd')" class="myValids">Password Doen't Match</div>
+              </div>
+            </div>
+            <div class="my-3 form-check">
+              <input class="form-check-input" type="checkbox" value="" id="termsCheck" formControlName="terms" required>
+              <label class="form-check-label" for="termsCheck">
+                I agree to the <a routerLink="/terms">Terms of Service</a>
+              </label>
+              <div *ngIf="isFieldInvalid('terms')" class="myValids">Accept Terms of Service</div>
+            </div>
+            <div class="d-grid col-12 col-sm-6 col-md-6 mx-auto mt-4">
+              <button type="submit" class="btn authBtn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

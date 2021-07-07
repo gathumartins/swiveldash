@@ -1,0 +1,41 @@
+<header class="myNav">
+  <div class="headtoppart clearfix">
+    <div class="headerwp clearfix">
+      <div class="headertopleft">
+        <div class="address clearfix"><span><i class="far fa-envelope"></i><a href="mailto:pg@eclectics.io">pg@eclectics.io</a></span> <a href="tel:+254 709 646 000"><i class="fas fa-phone" aria-hidden="true"></i>+254 709 646 000</a></div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sNav">
+    <div class="container-fluid container-lg sNavInn">
+      <button class="navbar-toggler myHum" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNav" aria-controls="mainNav">
+        <i class="fas fa-bars"></i>
+      </button>
+      <a class="navbar-brand mx-auto d-none d-sm-none d-md-block navLogo" href="#"><img src="assets/img/logo.png" /></a>
+      <div class="navbar-collapse d-none d-lg-block">
+      <app-navlinks></app-navlinks>
+      </div>
+      <!-- Mobile navigation -->
+      <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mainNav" aria-labelledby="mainNav">
+        <div class="offcanvas-header">
+          <img src="assets/img/logo.png"  class="mobilelogo d-block d-sm-block d-md-none"/>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <app-navlinks></app-navlinks>
+        </div>
+      </div>
+      <ul class="rightCont">
+        <li aria-haspopup="true" class="rightmenu">
+          <ul class="miniMenu">
+            <li><a routerLink=""><i class="fas fa-bell"></i></a></li>
+            <li><a routerLink=""><i class="fas fa-cog"></i></a></li>
+            <li><a routerLink=""><i class="fas fa-question-circle"></i></a></li>
+            <span class="mx-1">|</span>
+            <li><a (click)="onLogout()" class="logout">Sign Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

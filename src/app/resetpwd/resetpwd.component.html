@@ -1,0 +1,46 @@
+<main class="auth">
+  <section class="container-fluid authInn">
+    <img src="./assets/img/logoauth.png" alt="Swivel Developer Portal Auth page logo" class="mb-5"/>
+    <div class="loginCont my-5">
+      <div class="card resetPwd">
+        <div class="card-body">
+          <form [formGroup]="resetForm" (ngSubmit)="onSubmit()">
+            <h3>RESET PASSWORD</h3>
+            <div class="myInputs">
+              <input [type]="passType" class="form-control" id="newPwd" formControlName="newPwd" required>
+              <label for="newPwd" class="form-label">
+                <span class="contName">New Password *</span>
+              </label>
+              <div *ngIf="isFieldInvalid('newPwd')" class="myValids">Provide a new password</div>
+            </div>
+            <div class="myInputs">
+              <span class="btn showPwd text-center" (click)="showPwd()"><i [class]="passShown ? 'far fa-eye-slash' : 'far fa-eye'"></i></span>
+              <input [type]="passType" class="form-control" id="confirmPwd" formControlName="confirmPwd" required>
+              <label for="confirmPwd" class="form-label">
+                <span class="contName">Confirm Password *</span>
+              </label>
+              <div *ngIf="isFieldInvalid('confirmPwd')" class="myValids">Passwords Don't Match</div>
+            </div>
+            <div class="my-4 d-grid">
+              <button type="submit" class="btn authBtn" data-bs-toggle="modal" data-bs-target="#resetPwd">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- reset popup-->
+<div class="modal fade myPops" id="resetPwd" tabindex="-1" aria-labelledby="resetPwdLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body resetBody text-center">
+        <img src="assets/img/reset.png"/>
+        <h3>Success !</h3>
+        <p>Password reset successful</p>
+        <div class="btn resetBtn" data-bs-dismiss="modal">OKAY</div>
+      </div>
+    </div>
+  </div>
+</div>

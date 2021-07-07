@@ -1,0 +1,44 @@
+<main class="auth">
+  <section class="container-fluid authInn">
+    <img src="./assets/img/logoauth.png" alt="Swivel Developer Portal Auth page logo" class="mb-5"/>
+    <div class="loginCont my-5">
+      <div class="card logOut">
+        <div class="card-body">
+          <form [formGroup]="forgotForm" (ngSubmit)="onSubmit()">
+            <h3>FORGOT PASSWORD</h3>
+            <div class="myInputs">
+              <input type="email" class="form-control" id="email" formControlName="userName" required>
+              <label for="email" class="form-label">
+                <span class="contName">Email *</span>
+              </label>
+              <div *ngIf="isFieldInvalid('userName')" class="myValids">Please inform your user name</div>
+            </div>
+            <div class="mt-4 d-grid">
+              <button type="submit" class="btn authBtn" data-bs-toggle="modal" data-bs-target="#fgtPwd">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--Pop up-->
+<div class="modal fade myPops" id="fgtPwd" tabindex="-1" aria-labelledby="fgtPwdLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body popBody text-center">
+        <img src="assets/img/forgot.png" class="img-fluid"/>
+        <h3>CHECK YOUR MAIL !</h3>
+        <p>We just emailed you with instructions to reset your password</p>
+        <hr/>
+        <p>For any question or problems please email us at</p>
+        <h6>info@swivel-payments.com</h6>
+        <div class="btn authBtn" data-bs-dismiss="modal">OKAY</div>
+      </div>
+    </div>
+  </div>
+</div>

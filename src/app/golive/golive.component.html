@@ -1,0 +1,25 @@
+<section class="container-fluid container-lg pageCont">
+  <div class="pageMain">
+    <div class="pageMainInn text-center">
+      <div class="pageLabel">Go Live</div>
+      <button class="btn mb-4 downBtn"><i class="fa fa-download"></i> DOWNLOAD TEST CASE TEMPATE </button>
+      <form [formGroup]="goForm" (ngSubmit)="onSubmit()">
+        <div class="input-group mb-3 mx-auto myUpload">
+          <input type="file" class="form-control uploadInput" aria-describedby="testUpload" formControlName="testUpload" required>
+          <span class="btn uploadBtn" id="testUpload" type="button" >UPLOAD TEST RESULT</span>
+          <div *ngIf="isFieldInvalid('testUpload')" class="myValids">No File Selected</div>
+        </div>
+        <div class="my-4 form-check text-start mx-auto myCheck">
+          <input class="form-check-input" type="checkbox" value="" id="termsCheck" formControlName="termsCheck" required>
+          <label class="form-check-label" for="termsCheck">
+            I agree to the <a routerLink="/terms">Terms of Service</a>
+          </label>
+          <div *ngIf="isFieldInvalid('termsCheck')" class="myValids">No File Selected</div>
+        </div>
+        <div class="d-grid col-12 col-sm-6 col-md-3 mx-auto mt-4">
+          <button type="submit" class="btn authBtn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
